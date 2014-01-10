@@ -1,0 +1,32 @@
+<html>
+<html ng-app="">
+<head>
+	<title>Wuzzup Angular?</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+	<script src='./main.js'></script>
+</head>
+<body ng-model = 'books'>
+	<!---->
+	<div ng-controller = 'bookshelfCTRL'>
+		<div ng-model='newBook'>
+			<input type = 'text' ng-model = 'newBook'/>
+			<h1 ng-bind='addNewBook'></h1> <button ng-click = 'addNewBook(newBook)'>Add Book</button>
+			<!--<div ng-controller="bookshelfCTRL">-->
+				<input ng-model="search"></input>
+				<ul>
+					<li ng-repeat="books in books | filter:search">{{ books }}</li>
+				</ul>
+			</div>
+
+
+			<!--<button ng-click='addNewBook'>Click Me</button> -->
+		</div>
+		
+		<ul>
+			<li ng-repeat = 'book in books' button ng-click = 'removeBook(book)'>{{ book }}</button>
+				<!--<button ng-repeat = 'book in books' ng-click = 'removeBook(book)'>{{ book }}</button>--> 
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
